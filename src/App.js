@@ -1,25 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import React from "react";
+import NavbarComponent from './components/navbar';
+import PlayerListComponent from "./components/playerList";
+import PlayerComponent from "./components/player";
+import EmptyMessageComponent from "./components/EmptyMessage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    function App() {
+
+         const state = {
+            playerCount:0
+          };
+
+        const addPlayer = () => {
+          this.setState({playerCount: this.state.playerCount + 1});
+        }
+
+        return (
+          <div className="App">
+            <div>
+              <NavbarComponent/></div>
+            <div>
+              {/* {if () {
+                
+              }} */}
+            <div>
+              <PlayerListComponent playerCount="1"></PlayerListComponent>
+            </div>
+              <PlayerComponent/>
+          </div>
+          <button type="button" onClick={addPlayer}>+ Add player</button>
+          </div>
+        );
+      }
 
 export default App;
